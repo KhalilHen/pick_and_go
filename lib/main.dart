@@ -31,24 +31,46 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int kipLoempiaPressed = 0;
+  // Loempia
+  int kipLoempiaPieces = 0;
+  var kipLoempiaPortion = 0;
+
+// Gyoza
+  var gyozaPortion = 0;
+  var gyozaPieces = 0;
+
+  var gyozaPortionApple = 0;
+  var gyozaPortionVegatarian = 0;
+
+  var gyozaPiecesApple = 0;
+  var gyozaPiecesVegetarian = 0;
+
+  var ebiPortion = 0;
+  var ebiPieces = 0;
+
+  var senseiSnackBoxPortion = 0;
+  var senseiSnackBoxPieces = 0;
+
+  var yakitoriSpiesjesPortion = 0;
+  var yakitoriSpiesjesPieces = 0;
+  var edammePortion = 0;
+  var edammePieces = 0;
 
   @override
   Widget build(BuildContext context) {
-    var gyoza = "1 portie";
-    var ebi = "1 portie Ebi";
-    var senseiSnackBox = "1 Sensei Snack Box";
-    var yakitoriSpiesjes = "1  portie Yakitori spiesjes";
-
-    var kipLoempia = 3;
-    var Edamame = 0.5;
+    //  TODO Delete this later
+    // var gyoza = "1 portie";
+    // var ebi = "1 portie Ebi";
+    // var senseiSnackBox = "1 Sensei Snack Box";
+    // var yakitoriSpiesjes = "1  portie Yakitori spiesjes";
+    // var Edamame = 0.5;
 
 // var  yakitoriStuks =
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        backgroundColor: Colors.black,
+        title: Text(widget.title, style: TextStyle(color: Colors.white)),
       ),
       body: Center(
         child: Column(
@@ -63,55 +85,42 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        kipLoempiaPressed += 3;
+                        kipLoempiaPieces += 3;
+                        kipLoempiaPortion++;
                       });
-
-                      print(kipLoempia);
-
-                      print(kipLoempiaPressed);
                     },
                     child: Text("kip Loempia")),
 
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        // kipLoempiaPressed += 3;
+                        // TODO Fix this one later
+                        senseiSnackBoxPortion;
+                        senseiSnackBoxPieces;
                       });
-
-                      print(kipLoempia);
-
-                      print(kipLoempiaPressed);
                     },
                     child: Text("Sensei Snack Box")),
 
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        kipLoempiaPressed += 3;
+                        yakitoriSpiesjesPieces += 3;
+                        yakitoriSpiesjesPortion++;
                       });
-
-                      print(kipLoempia);
-
-                      print(kipLoempiaPressed);
                     },
                     child: Text("Yakitori spiesjes")),
 
                 ElevatedButton(
                     onPressed: () {
-                      setState(() {
-                        kipLoempiaPressed += 3;
-                      });
-
-                      print(kipLoempia);
-
-                      print(kipLoempiaPressed);
+                      setState(() {});
                     },
                     child: Text("Gebakken banaan")),
 
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        kipLoempiaPressed += 3;
+                        ebiPieces += 3;
+                        ebiPortion++;
                       });
                     },
                     child: Text(" Ebi tempura")),
@@ -119,24 +128,27 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        kipLoempiaPressed += 3;
+                        gyozaPieces += 5;
+                        gyozaPortion++;
                       });
-
-                      print(kipLoempia);
-
-                      print(kipLoempiaPressed);
                     },
                     child: Text("Gyoza")),
 
                 ElevatedButton(
                     onPressed: () {
-                      setState(() {});
+                      setState(() {
+                        gyozaPortionApple += 5;
+                        gyozaPiecesApple++;
+                      });
                     },
                     child: Text("Gyoza Vegatarisch")),
 
                 ElevatedButton(
                     onPressed: () {
-                      setState(() {});
+                      setState(() {
+                        gyozaPiecesApple += 5;
+                        gyozaPortionApple++;
+                      });
                     },
                     child: Text("Gyoza appel")),
 
@@ -154,7 +166,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
                 ElevatedButton(
                     onPressed: () {
-                      setState(() {});
+                      setState(() {
+                        // edammePieces += 0.5;
+                        edammePortion++;
+                      });
                     },
                     child: Text("Spicy Edamame")),
               ],
@@ -165,9 +180,28 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton(
                 onPressed: () {
                   print(
-                      'pak zoveel  Kip loempias :  $kipLoempiaPressed/porties:  , Edamame : $Edamame,  Gyoza : $gyoza,  Ebi : $ebi,  Sensei Snack Box : $senseiSnackBox,  Yakitori spiesjes : $yakitoriSpiesjes');
+                      'pak zoveel  Kip loempias :  $kipLoempiaPieces   in porties:  $kipLoempiaPortion , Edamame : $edammePortion,  Gyoza : $gyozaPieces portion: $gyozaPortion,  Ebi : $ebiPieces Portion: $ebiPortion,  Sensei Snack Box : $senseiSnackBoxPieces Portion: $senseiSnackBoxPortion,  Yakitori spiesjes : $yakitoriSpiesjesPieces Portion: $yakitoriSpiesjesPortion');
                 },
                 child: Text("Result")),
+            // Text("Kip Loempia stuks: $kipLoempiaPieces"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Hoeveel je moet pakken van alles"),
+                SizedBox(
+                  height: 50,
+                ),
+              ],
+            ),
+            Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              alignment: WrapAlignment.center,
+              children: [
+                Text("Kip Loempia stuks: $kipLoempiaPieces"),
+                Text("Kip Loempia porties: $kipLoempiaPortion"),
+              ],
+            ),
           ],
         ),
       ),
