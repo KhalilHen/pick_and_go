@@ -31,6 +31,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int kipLoempiaPressed = 0;
+
   @override
   Widget build(BuildContext context) {
     var gyoza = "1 portie";
@@ -52,22 +54,120 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            Wrap(
+              spacing: 10,
+              runSpacing: 10,
+              alignment: WrapAlignment.center,
               children: [
+                //1ste
                 ElevatedButton(
                     onPressed: () {
-                      var kipLoempiaPressed;
+                      setState(() {
+                        kipLoempiaPressed += 3;
+                      });
+
                       print(kipLoempia);
+
+                      print(kipLoempiaPressed);
                     },
                     child: Text("kip Loempia")),
-                ElevatedButton(onPressed: null, child: Text("Edamame")),
+
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        // kipLoempiaPressed += 3;
+                      });
+
+                      print(kipLoempia);
+
+                      print(kipLoempiaPressed);
+                    },
+                    child: Text("Sensei Snack Box")),
+
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        kipLoempiaPressed += 3;
+                      });
+
+                      print(kipLoempia);
+
+                      print(kipLoempiaPressed);
+                    },
+                    child: Text("Yakitori spiesjes")),
+
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        kipLoempiaPressed += 3;
+                      });
+
+                      print(kipLoempia);
+
+                      print(kipLoempiaPressed);
+                    },
+                    child: Text("Gebakken banaan")),
+
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        kipLoempiaPressed += 3;
+                      });
+                    },
+                    child: Text(" Ebi tempura")),
+
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        kipLoempiaPressed += 3;
+                      });
+
+                      print(kipLoempia);
+
+                      print(kipLoempiaPressed);
+                    },
+                    child: Text("Gyoza")),
+
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {});
+                    },
+                    child: Text("Gyoza Vegatarisch")),
+
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {});
+                    },
+                    child: Text("Gyoza appel")),
+
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {});
+                    },
+                    child: Text("Vegatarisch Loempia")),
+
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {});
+                    },
+                    child: Text(" Edamame")),
+
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {});
+                    },
+                    child: Text("Spicy Edamame")),
               ],
             ),
             SizedBox(
               height: 100,
             ),
-            ElevatedButton(onPressed: () {}, child: Text("Result")),
+            ElevatedButton(
+                onPressed: () {
+                  print(
+                      'pak zoveel  Kip loempias :  $kipLoempiaPressed/porties:  , Edamame : $Edamame,  Gyoza : $gyoza,  Ebi : $ebi,  Sensei Snack Box : $senseiSnackBox,  Yakitori spiesjes : $yakitoriSpiesjes');
+                },
+                child: Text("Result")),
           ],
         ),
       ),
