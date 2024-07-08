@@ -34,7 +34,7 @@ class _MyHomePageState extends State<MyHomePage> {
   // Loempia
   int kipLoempiaPieces = 0;
   var kipLoempiaPortion = 0;
-
+  var vegetarianLoempiaPieces = 0;
 // Gyoza
   var gyozaPortion = 0;
   var gyozaPieces = 0;
@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.black,
         title: Text(widget.title, style: TextStyle(color: Colors.white)),
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -137,8 +137,8 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(
                     onPressed: () {
                       setState(() {
-                        gyozaPortionApple += 5;
-                        gyozaPiecesApple++;
+                        gyozaPiecesVegetarian += 5;
+                        gyozaPortionVegatarian++;
                       });
                     },
                     child: Text("Gyoza Vegatarisch")),
@@ -154,7 +154,10 @@ class _MyHomePageState extends State<MyHomePage> {
 
                 ElevatedButton(
                     onPressed: () {
-                      setState(() {});
+                      setState(() {
+                        vegetarianLoempiaPieces += 5;
+                        // ++;
+                      });
                     },
                     child: Text("Vegatarisch Loempia")),
 
@@ -177,12 +180,12 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(
               height: 100,
             ),
-            ElevatedButton(
-                onPressed: () {
-                  print(
-                      'pak zoveel  Kip loempias :  $kipLoempiaPieces   in porties:  $kipLoempiaPortion , Edamame : $edammePortion,  Gyoza : $gyozaPieces portion: $gyozaPortion,  Ebi : $ebiPieces Portion: $ebiPortion,  Sensei Snack Box : $senseiSnackBoxPieces Portion: $senseiSnackBoxPortion,  Yakitori spiesjes : $yakitoriSpiesjesPieces Portion: $yakitoriSpiesjesPortion');
-                },
-                child: Text("Result")),
+            // ElevatedButton(
+            //     onPressed: () {
+            //       print(
+            //           'pak zoveel  Kip loempias :  $kipLoempiaPieces   in porties:  $kipLoempiaPortion , Edamame : $edammePortion,  Gyoza : $gyozaPieces portion: $gyozaPortion,  Ebi : $ebiPieces Portion: $ebiPortion,  Sensei Snack Box : $senseiSnackBoxPieces Portion: $senseiSnackBoxPortion,  Yakitori spiesjes : $yakitoriSpiesjesPieces Portion: $yakitoriSpiesjesPortion');
+            //     },
+            //     child: Text("Result")),
             // Text("Kip Loempia stuks: $kipLoempiaPieces"),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -198,8 +201,34 @@ class _MyHomePageState extends State<MyHomePage> {
               runSpacing: 10,
               alignment: WrapAlignment.center,
               children: [
-                Text("Kip Loempia stuks: $kipLoempiaPieces"),
-                Text("Kip Loempia porties: $kipLoempiaPortion"),
+                Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          "Loempia\s ",
+                          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                        ),
+
+                        Text("Kip Loempia stuks: $kipLoempiaPieces"),
+                        Text("Kip Loempia porties: $kipLoempiaPortion"),
+                        // Text("Sensei Snack box stuks  $kipLoempiaPieces"),
+                        Text("Yakitori spiesjes  stuks: $yakitoriSpiesjesPieces"),
+
+                        Text("Yakitori portions  : $yakitoriSpiesjesPortion"),
+
+                        // baked banaan for now not
+
+                        Text("Ebi tempura stuks: $ebiPieces"),
+                        Text("Gyoza stuks: $gyozaPieces"),
+
+                        Text("Gyoza vegetarian: $gyozaPiecesVegetarian"),
+                        Text("Gyoza apple: $gyozaPiecesApple"),
+                        Text("Vegetarische loempiaq: $vegetarianLoempiaPieces")
+                      ],
+                    ),
+                  ],
+                ),
               ],
             ),
           ],
