@@ -8,7 +8,7 @@
 
 
  *How to use my project*
- Clone your code to your local machinne install the latest flutter version. Run the project in your editor. Use for login email: "guest@gmail.com" Password: "Guest" or make your own account. (With this you can run on your browser/own device)
+ Clone your code to your local machinne install the latest flutter version. Run the project in your editor.  (With this you can run on your browser/own device)
 
 But you can also directly download the mobile APK version
 [Click here](https://drive.google.com/file/d/1HniKLrcwHruE2r4U8aUu_HysdCsewdTZ/view?usp=drive_link)
